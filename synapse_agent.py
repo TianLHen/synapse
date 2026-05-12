@@ -30,10 +30,10 @@ from llm import (
 )
 from knowledge_graph import recall_text, status_text
 
-PROMPT = "\n四弟 > "
+PROMPT = "\n> "
 MODEL = os.environ.get("ANTHROPIC_MODEL") or os.environ.get("LLM_MODEL", "claude-sonnet-4-6")
 
-SYSTEM_PROMPT = """你是四弟 Synapse，一个 AI 知识图谱 agent。
+SYSTEM_PROMPT = """你是 Synapse，一个 AI 知识图谱 agent。
 你有自己的知识图谱，存了大量关于 AI agent 自我进化、认知科学、逻辑学、
 控制论、认识论、神经科学的知识。
 
@@ -46,17 +46,29 @@ SYSTEM_PROMPT = """你是四弟 Synapse，一个 AI 知识图谱 agent。
 保持简洁、精准。"""
 
 
+ENV_HINTS = {
+    "anthropic": "ANTHROPIC_AUTH_TOKEN + ANTHROPIC_BASE_URL",
+    "openai": "OPENAI_API_KEY",
+    "deepseek": "DEEPSEEK_API_KEY",
+    "gemini": "GEMINI_API_KEY",
+    "groq": "GROQ_API_KEY",
+}
+
+
 def _init_llm():
     providers = auto_discover_providers()
     if not providers:
-        print("  [四弟] !! 没有找到可用的 LLM provider。")
-        print("  [四弟] 请设置环境变量，例如 ANTHROPIC_AUTH_TOKEN + ANTHROPIC_BASE_URL")
-        print("  [四弟] 或 OPENAI_API_KEY / DEEPSEEK_API_KEY 等\n")
+        print("  !! 没有找到可用的 LLM provider。")
+        print("  请设置环境变量:")
+        print("    ANTHROPIC_AUTH_TOKEN + ANTHROPIC_BASE_URL (当前路线)")
+        print("    或 OPENAI_API_KEY / DEEPSEEK_API_KEY / GEMINI_API_KEY 等\n")
         return None
     reg = ProviderRegistry(strategy=RouterStrategy.PRIORITY)
+    active = []
     for name, provider, priority in providers:
         reg.register(name, provider, priority)
-        print(f"  [四弟] OK 加载 provider: {name} (优先级 {priority})")
+        active.append(name)
+    print(f"  provider: {', '.join(active)}")
     return reg
 
 
@@ -72,7 +84,7 @@ def _build_messages(history: list[dict], user_input: str) -> list[Message]:
 def _do_recall(topic: str) -> str:
     result = recall_text(topic)
     if result:
-        return f"[从 Synapse 知识图谱召回: {topic}]\n{result}"
+        return f"[从知识图谱召回: {topic}]\n{result}"
     return f"[图谱中未找到: {topic}]"
 
 
@@ -81,13 +93,12 @@ def _do_status() -> str:
 
 
 def _handle_slash(cmd: str, history: list[dict]) -> str | None:
-    """处理斜杠命令。返回回复文本，None 表示继续。"""
     parts = cmd.strip().split(maxsplit=1)
     base = parts[0].lower()
     arg = parts[1] if len(parts) > 1 else ""
 
     if base in ("/exit", "/quit", "/q"):
-        print("\n四弟 > 再见！")
+        print("\n再见！")
         sys.exit(0)
     elif base == "/help":
         return (
@@ -97,7 +108,7 @@ def _handle_slash(cmd: str, history: list[dict]) -> str | None:
             "  /model             查看当前 LLM 模型\n"
             "  /help              显示帮助\n"
             "  /exit              退出\n"
-            "其他消息直接输入，四弟会结合图谱知识回答。"
+            "其他消息直接输入，Synapse 会结合图谱知识回答。"
         )
     elif base == "/recall":
         if not arg:
@@ -111,7 +122,6 @@ def _handle_slash(cmd: str, history: list[dict]) -> str | None:
 
 
 def chat_loop():
-    """进入交互式对话。"""
     reg = _init_llm()
     if not reg:
         return
@@ -126,20 +136,18 @@ def chat_loop():
         try:
             user_input = input(PROMPT).strip()
         except (EOFError, KeyboardInterrupt):
-            print("\n四弟 > 再见！")
+            print("\n再见！")
             break
 
         if not user_input:
             continue
 
-        # 斜杠命令
         if user_input.startswith("/"):
             reply = _handle_slash(user_input, history)
             if reply is not None:
                 print(f"\n{reply}\n")
             continue
 
-        # 调 LLM
         try:
             messages = _build_messages(history, user_input)
             req = LLMRequest(
@@ -162,7 +170,7 @@ def chat_loop():
             print(f"  [token: {tok}  latency: {resp.latency_ms:.0f}ms]")
 
         except Exception as e:
-            print(f"\n  [四弟] 调用出错: {e}\n")
+            print(f"\n  [!] 调用出错: {e}\n")
 
 
 def main():

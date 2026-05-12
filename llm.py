@@ -739,6 +739,7 @@ class ProviderRegistry:
         ordered = self._ordered_providers(strat)
         last_error = ""
 
+        errors: list[str] = []
         for name in ordered:
             provider = self._providers.get(name)
             if not provider:
@@ -756,11 +757,15 @@ class ProviderRegistry:
                 self._record_success(name, resp)
                 return resp
             except Exception as e:
-                last_error = str(e)
+                err = f"{name}: {e}"
+                errors.append(err)
                 self._record_error(name, e)
                 continue
 
-        raise RuntimeError(f"所有 provider 都失败了。最后错误: {last_error}")
+        raise RuntimeError(
+            f"所有 provider 都失败了 (共 {len(ordered)} 个):\n"
+            + "\n".join(f"  - {e}" for e in errors)
+        )
 
     def _ordered_providers(self, strategy: RouterStrategy) -> list[str]:
         names = list(self._providers.keys())
