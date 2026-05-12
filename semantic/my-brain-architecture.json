@@ -1,0 +1,1273 @@
+{
+  "nodes": [
+    {
+      "id": "my_brain_architecture_didi_brain",
+      "label": "二弟大脑 (DIDI Brain) - AI Brain Architecture",
+      "file_type": "rationale",
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "my_brain_architecture_l1_sensory_cortex",
+      "label": "L1 Sensory Cortex (感知区)",
+      "file_type": "rationale",
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "my_brain_architecture_l2_encoding_area",
+      "label": "L2 Encoding Area (编码区)",
+      "file_type": "rationale",
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "my_brain_architecture_l3_integration_area",
+      "label": "L3 Integration Area (整合区)",
+      "file_type": "rationale",
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "my_brain_architecture_l4_kg_core",
+      "label": "L4 KG Core (知识图谱层)",
+      "file_type": "rationale",
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "my_brain_architecture_l5_query_cortex",
+      "label": "L5 Query Cortex (检索层)",
+      "file_type": "rationale",
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "my_brain_architecture_l6_executive_hub",
+      "label": "L6 Executive Hub (控制层)",
+      "file_type": "rationale",
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "my_brain_architecture_meta_cortex",
+      "label": "Meta Cortex (元认知层)",
+      "file_type": "rationale",
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "my_brain_architecture_read_column",
+      "label": "Read Column - File I/O",
+      "file_type": "rationale",
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "my_brain_architecture_fetch_column",
+      "label": "Fetch Column - URL Web Scraping",
+      "file_type": "rationale",
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "my_brain_architecture_listen_column",
+      "label": "Listen Column - User Input Parsing",
+      "file_type": "rationale",
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "my_brain_architecture_sense_column",
+      "label": "Sense Column - Environment Detection",
+      "file_type": "rationale",
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "my_brain_architecture_entity_column",
+      "label": "Entity Column - NER and Concept Extraction",
+      "file_type": "rationale",
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "my_brain_architecture_relation_column",
+      "label": "Relation Column - Relation Extraction",
+      "file_type": "rationale",
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "my_brain_architecture_embed_column",
+      "label": "Embed Column - Vector Embedding",
+      "file_type": "rationale",
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "my_brain_architecture_summarize_column",
+      "label": "Summarize Column - Core Information Extraction",
+      "file_type": "rationale",
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "my_brain_architecture_dedup_column",
+      "label": "Dedup Column - Duplicate Entity Merging",
+      "file_type": "rationale",
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "my_brain_architecture_conflict_column",
+      "label": "Conflict Column - Knowledge Conflict Detection",
+      "file_type": "rationale",
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "my_brain_architecture_crossref_column",
+      "label": "CrossRef Column - Cross-Referencing",
+      "file_type": "rationale",
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "my_brain_architecture_priority_column",
+      "label": "Priority Column - Knowledge Priority Assessment",
+      "file_type": "rationale",
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "my_brain_architecture_concept_space",
+      "label": "Concept Space - Entity Nodes and Semantic Edges",
+      "file_type": "rationale",
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "my_brain_architecture_vector_space",
+      "label": "Vector Space - Embedding Index for Similarity Search",
+      "file_type": "rationale",
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "my_brain_architecture_workspace",
+      "label": "Workspace (Scratchpad) - Session Temporary Knowledge",
+      "file_type": "rationale",
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "my_brain_architecture_archive",
+      "label": "Archive - Low-Frequency Knowledge",
+      "file_type": "rationale",
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "my_brain_architecture_search_column",
+      "label": "Search Column - Keyword and Semantic Search",
+      "file_type": "rationale",
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "my_brain_architecture_route_column",
+      "label": "Route Column - Input-to-Skill Mapping",
+      "file_type": "rationale",
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "my_brain_architecture_pattern_column",
+      "label": "Pattern Column - Context-History Pattern Matching",
+      "file_type": "rationale",
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "my_brain_architecture_relevance_column",
+      "label": "Relevance Column - Result Ranking and Trimming",
+      "file_type": "rationale",
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "my_brain_architecture_diagnosis_column",
+      "label": "Diagnosis Column - Bottleneck Diagnosis",
+      "file_type": "rationale",
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "my_brain_architecture_planning_column",
+      "label": "Planning Column - Goal Decomposition",
+      "file_type": "rationale",
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "my_brain_architecture_scheduling_column",
+      "label": "Scheduling Column - Priority and Resource Allocation",
+      "file_type": "rationale",
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "my_brain_architecture_execution_column",
+      "label": "Execution Column - Skill Invocation and Code Execution",
+      "file_type": "rationale",
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "my_brain_architecture_trace_column",
+      "label": "Trace Column - Execution Trace Recording",
+      "file_type": "rationale",
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "my_brain_architecture_evaluate_column",
+      "label": "Evaluate Column - Result Quality Assessment",
+      "file_type": "rationale",
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "my_brain_architecture_evolve_column",
+      "label": "Evolve Column - Evolvable Pattern Extraction",
+      "file_type": "rationale",
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "my_brain_architecture_prune_column",
+      "label": "Prune Column - Knowledge and Skill Pruning",
+      "file_type": "rationale",
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "my_brain_architecture_dual_process_system",
+      "label": "Dual-Process System (双系统)",
+      "file_type": "rationale",
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "my_brain_architecture_system1",
+      "label": "System 1 (Fast) - Direct Query, Pattern Match, <100ms",
+      "file_type": "rationale",
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "my_brain_architecture_system2",
+      "label": "System 2 (Slow) - Multi-hop Reasoning, s~min",
+      "file_type": "rationale",
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "my_brain_architecture_principle_knowledge_is_graph",
+      "label": "Principle: 知识即图 (Knowledge is Graph)",
+      "file_type": "rationale",
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "my_brain_architecture_principle_write_is_persistent",
+      "label": "Principle: 写入即持久 (Write is Persistent)",
+      "file_type": "rationale",
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "my_brain_architecture_principle_save_conflicts",
+      "label": "Principle: 冲突先保存 (Save Conflicts First)",
+      "file_type": "rationale",
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "my_brain_architecture_principle_source_traceability",
+      "label": "Principle: 源头溯源 (Source Traceability)",
+      "file_type": "rationale",
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "my_brain_architecture_principle_evolve_not_expand",
+      "label": "Principle: 进化但不膨胀 (Evolve not Expand)",
+      "file_type": "rationale",
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "my_brain_architecture_principle_two_tier_control",
+      "label": "Principle: 控制分两层 (Two-tier Control)",
+      "file_type": "rationale",
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "my_brain_architecture_principle_system1_first",
+      "label": "Principle: System 1 优先 (System 1 First)",
+      "file_type": "rationale",
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "my_brain_architecture_knowledge_graph_py",
+      "label": "knowledge_graph.py (Existing Implementation)",
+      "file_type": "code",
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "my_brain_architecture_absorb_and_evolve",
+      "label": "Absorb-and-Evolve Diagnostic Layer",
+      "file_type": "rationale",
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "my_brain_architecture_human_brain_comparison",
+      "label": "Human Brain vs AI Brain Comparison Table",
+      "file_type": "rationale",
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "my_brain_architecture_didi_brain",
+      "target": "my_brain_architecture_l1_sensory_cortex",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "my_brain_architecture_didi_brain",
+      "target": "my_brain_architecture_l2_encoding_area",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "my_brain_architecture_didi_brain",
+      "target": "my_brain_architecture_l3_integration_area",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "my_brain_architecture_didi_brain",
+      "target": "my_brain_architecture_l4_kg_core",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "my_brain_architecture_didi_brain",
+      "target": "my_brain_architecture_l5_query_cortex",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "my_brain_architecture_didi_brain",
+      "target": "my_brain_architecture_l6_executive_hub",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "my_brain_architecture_didi_brain",
+      "target": "my_brain_architecture_meta_cortex",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "my_brain_architecture_didi_brain",
+      "target": "my_brain_architecture_dual_process_system",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "my_brain_architecture_didi_brain",
+      "target": "my_brain_architecture_human_brain_comparison",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "my_brain_architecture_l1_sensory_cortex",
+      "target": "my_brain_architecture_read_column",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "my_brain_architecture_l1_sensory_cortex",
+      "target": "my_brain_architecture_fetch_column",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "my_brain_architecture_l1_sensory_cortex",
+      "target": "my_brain_architecture_listen_column",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "my_brain_architecture_l1_sensory_cortex",
+      "target": "my_brain_architecture_sense_column",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "my_brain_architecture_l2_encoding_area",
+      "target": "my_brain_architecture_entity_column",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "my_brain_architecture_l2_encoding_area",
+      "target": "my_brain_architecture_relation_column",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "my_brain_architecture_l2_encoding_area",
+      "target": "my_brain_architecture_embed_column",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "my_brain_architecture_l2_encoding_area",
+      "target": "my_brain_architecture_summarize_column",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "my_brain_architecture_l3_integration_area",
+      "target": "my_brain_architecture_dedup_column",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "my_brain_architecture_l3_integration_area",
+      "target": "my_brain_architecture_conflict_column",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "my_brain_architecture_l3_integration_area",
+      "target": "my_brain_architecture_crossref_column",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "my_brain_architecture_l3_integration_area",
+      "target": "my_brain_architecture_priority_column",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "my_brain_architecture_l4_kg_core",
+      "target": "my_brain_architecture_concept_space",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "my_brain_architecture_l4_kg_core",
+      "target": "my_brain_architecture_vector_space",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "my_brain_architecture_l4_kg_core",
+      "target": "my_brain_architecture_workspace",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "my_brain_architecture_l4_kg_core",
+      "target": "my_brain_architecture_archive",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "my_brain_architecture_l5_query_cortex",
+      "target": "my_brain_architecture_search_column",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "my_brain_architecture_l5_query_cortex",
+      "target": "my_brain_architecture_route_column",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "my_brain_architecture_l5_query_cortex",
+      "target": "my_brain_architecture_pattern_column",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "my_brain_architecture_l5_query_cortex",
+      "target": "my_brain_architecture_relevance_column",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "my_brain_architecture_l6_executive_hub",
+      "target": "my_brain_architecture_diagnosis_column",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "my_brain_architecture_l6_executive_hub",
+      "target": "my_brain_architecture_planning_column",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "my_brain_architecture_l6_executive_hub",
+      "target": "my_brain_architecture_scheduling_column",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "my_brain_architecture_l6_executive_hub",
+      "target": "my_brain_architecture_execution_column",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "my_brain_architecture_meta_cortex",
+      "target": "my_brain_architecture_trace_column",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "my_brain_architecture_meta_cortex",
+      "target": "my_brain_architecture_evaluate_column",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "my_brain_architecture_meta_cortex",
+      "target": "my_brain_architecture_evolve_column",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "my_brain_architecture_meta_cortex",
+      "target": "my_brain_architecture_prune_column",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "my_brain_architecture_l1_sensory_cortex",
+      "target": "my_brain_architecture_l2_encoding_area",
+      "relation": "shares_data_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "my_brain_architecture_l2_encoding_area",
+      "target": "my_brain_architecture_l3_integration_area",
+      "relation": "shares_data_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "my_brain_architecture_l3_integration_area",
+      "target": "my_brain_architecture_l4_kg_core",
+      "relation": "shares_data_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "my_brain_architecture_l4_kg_core",
+      "target": "my_brain_architecture_l5_query_cortex",
+      "relation": "shares_data_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "my_brain_architecture_l5_query_cortex",
+      "target": "my_brain_architecture_l6_executive_hub",
+      "relation": "shares_data_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "my_brain_architecture_meta_cortex",
+      "target": "my_brain_architecture_l1_sensory_cortex",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "my_brain_architecture_meta_cortex",
+      "target": "my_brain_architecture_l2_encoding_area",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "my_brain_architecture_meta_cortex",
+      "target": "my_brain_architecture_l3_integration_area",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "my_brain_architecture_meta_cortex",
+      "target": "my_brain_architecture_l4_kg_core",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "my_brain_architecture_meta_cortex",
+      "target": "my_brain_architecture_l5_query_cortex",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "my_brain_architecture_meta_cortex",
+      "target": "my_brain_architecture_l6_executive_hub",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "my_brain_architecture_dual_process_system",
+      "target": "my_brain_architecture_system1",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "my_brain_architecture_dual_process_system",
+      "target": "my_brain_architecture_system2",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "my_brain_architecture_system1",
+      "target": "my_brain_architecture_l5_query_cortex",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "my_brain_architecture_system2",
+      "target": "my_brain_architecture_l5_query_cortex",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "my_brain_architecture_principle_knowledge_is_graph",
+      "target": "my_brain_architecture_didi_brain",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "my_brain_architecture_principle_write_is_persistent",
+      "target": "my_brain_architecture_didi_brain",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "my_brain_architecture_principle_save_conflicts",
+      "target": "my_brain_architecture_didi_brain",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "my_brain_architecture_principle_source_traceability",
+      "target": "my_brain_architecture_didi_brain",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "my_brain_architecture_principle_evolve_not_expand",
+      "target": "my_brain_architecture_didi_brain",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "my_brain_architecture_principle_two_tier_control",
+      "target": "my_brain_architecture_didi_brain",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "my_brain_architecture_principle_system1_first",
+      "target": "my_brain_architecture_didi_brain",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "my_brain_architecture_didi_brain",
+      "target": "my_brain_architecture_knowledge_graph_py",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "my_brain_architecture_l6_executive_hub",
+      "target": "my_brain_architecture_absorb_and_evolve",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "my_brain_architecture_principle_save_conflicts",
+      "target": "my_brain_architecture_conflict_column",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "my_brain_architecture_principle_source_traceability",
+      "target": "my_brain_architecture_crossref_column",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "my_brain_architecture_principle_two_tier_control",
+      "target": "my_brain_architecture_meta_cortex",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "my_brain_architecture_principle_system1_first",
+      "target": "my_brain_architecture_system1",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md",
+      "source_location": null,
+      "weight": 1.0
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "l1_l6_processing_pipeline",
+      "label": "L1-L6 Processing Pipeline",
+      "nodes": [
+        "my_brain_architecture_l1_sensory_cortex",
+        "my_brain_architecture_l2_encoding_area",
+        "my_brain_architecture_l3_integration_area",
+        "my_brain_architecture_l4_kg_core",
+        "my_brain_architecture_l5_query_cortex",
+        "my_brain_architecture_l6_executive_hub"
+      ],
+      "relation": "form",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md"
+    },
+    {
+      "id": "dual_process_system_form",
+      "label": "Dual-Process System Composition",
+      "nodes": [
+        "my_brain_architecture_dual_process_system",
+        "my_brain_architecture_system1",
+        "my_brain_architecture_system2"
+      ],
+      "relation": "form",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md"
+    },
+    {
+      "id": "l1_sensory_columns",
+      "label": "L1 Sensory Processing Columns",
+      "nodes": [
+        "my_brain_architecture_read_column",
+        "my_brain_architecture_fetch_column",
+        "my_brain_architecture_listen_column",
+        "my_brain_architecture_sense_column"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md"
+    },
+    {
+      "id": "design_principles_set",
+      "label": "Seven Design Principles",
+      "nodes": [
+        "my_brain_architecture_principle_knowledge_is_graph",
+        "my_brain_architecture_principle_write_is_persistent",
+        "my_brain_architecture_principle_save_conflicts",
+        "my_brain_architecture_principle_source_traceability",
+        "my_brain_architecture_principle_evolve_not_expand",
+        "my_brain_architecture_principle_two_tier_control",
+        "my_brain_architecture_principle_system1_first"
+      ],
+      "relation": "form",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md"
+    },
+    {
+      "id": "meta_cortex_columns",
+      "label": "Meta Cortex Observer Columns",
+      "nodes": [
+        "my_brain_architecture_trace_column",
+        "my_brain_architecture_evaluate_column",
+        "my_brain_architecture_evolve_column",
+        "my_brain_architecture_prune_column"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notes/my-brain-architecture.md"
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

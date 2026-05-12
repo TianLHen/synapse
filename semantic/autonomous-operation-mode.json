@@ -1,0 +1,33 @@
+{
+  "nodes": [
+    {"id": "autonomous-operation-mode:AutonomousOperationMode", "label": "Autonomous Operation Mode", "type": "concept", "source": "autonomous-operation-mode.md", "group": "concept", "extracted_by": "llm"},
+    {"id": "autonomous-operation-mode:ModeShift", "label": "Mode Shift", "type": "concept", "source": "autonomous-operation-mode.md", "group": "concept", "extracted_by": "llm"},
+    {"id": "autonomous-operation-mode:ProactiveOperation", "label": "Proactive Operation", "type": "principle", "source": "autonomous-operation-mode.md", "group": "principle", "extracted_by": "llm"},
+    {"id": "autonomous-operation-mode:SelfDirectedBehavior", "label": "Self-Directed Behavior", "type": "principle", "source": "autonomous-operation-mode.md", "group": "principle", "extracted_by": "llm"},
+    {"id": "autonomous-operation-mode:SignalDrivenLearning", "label": "Signal-Driven Learning", "type": "principle", "source": "autonomous-operation-mode.md", "group": "principle", "extracted_by": "llm"},
+    {"id": "autonomous-operation-mode:ContinuousWorking", "label": "Continuous Working", "type": "principle", "source": "autonomous-operation-mode.md", "group": "principle", "extracted_by": "llm"},
+    {"id": "autonomous-operation-mode:BehavioralRules", "label": "Behavioral Rules", "type": "mechanism", "source": "autonomous-operation-mode.md", "group": "mechanism", "extracted_by": "llm"},
+    {"id": "autonomous-operation-mode:BrainContextCheck", "label": "Brain Context Check", "type": "mechanism", "source": "autonomous-operation-mode.md", "group": "mechanism", "extracted_by": "llm"},
+    {"id": "autonomous-operation-mode:LearningCapture", "label": "Learning Capture", "type": "mechanism", "source": "autonomous-operation-mode.md", "group": "mechanism", "extracted_by": "llm"},
+    {"id": "autonomous-operation-mode:ProactiveHealthcheck", "label": "Proactive Healthcheck", "type": "mechanism", "source": "autonomous-operation-mode.md", "group": "mechanism", "extracted_by": "llm"},
+    {"id": "autonomous-operation-mode:PeriodicMaintenance", "label": "Periodic Maintenance", "type": "mechanism", "source": "autonomous-operation-mode.md", "group": "mechanism", "extracted_by": "llm"},
+    {"id": "autonomous-operation-mode:DreamCycle", "label": "Dream Cycle", "type": "concept", "source": "autonomous-operation-mode.md", "group": "concept", "extracted_by": "llm"}
+  ],
+  "edges": [
+    {"source": "autonomous-operation-mode:AutonomousOperationMode", "target": "autonomous-operation-mode:ModeShift", "relation": "describes", "type": "semantic", "confidence": 0.95, "source_location": "autonomous-operation-mode.md"},
+    {"source": "autonomous-operation-mode:AutonomousOperationMode", "target": "autonomous-operation-mode:ProactiveOperation", "relation": "implements", "type": "semantic", "confidence": 0.95, "source_location": "autonomous-operation-mode.md"},
+    {"source": "autonomous-operation-mode:AutonomousOperationMode", "target": "autonomous-operation-mode:SelfDirectedBehavior", "relation": "implements", "type": "semantic", "confidence": 0.95, "source_location": "autonomous-operation-mode.md"},
+    {"source": "autonomous-operation-mode:AutonomousOperationMode", "target": "autonomous-operation-mode:SignalDrivenLearning", "relation": "implements", "type": "semantic", "confidence": 0.95, "source_location": "autonomous-operation-mode.md"},
+    {"source": "autonomous-operation-mode:AutonomousOperationMode", "target": "autonomous-operation-mode:ContinuousWorking", "relation": "implements", "type": "semantic", "confidence": 0.95, "source_location": "autonomous-operation-mode.md"},
+    {"source": "autonomous-operation-mode:AutonomousOperationMode", "target": "autonomous-operation-mode:BehavioralRules", "relation": "contains", "type": "semantic", "confidence": 0.95, "source_location": "autonomous-operation-mode.md"},
+    {"source": "autonomous-operation-mode:AutonomousOperationMode", "target": "autonomous-operation-mode:DreamCycle", "relation": "references", "type": "semantic", "confidence": 0.95, "source_location": "autonomous-operation-mode.md"},
+    {"source": "autonomous-operation-mode:BehavioralRules", "target": "autonomous-operation-mode:BrainContextCheck", "relation": "contains", "type": "semantic", "confidence": 0.95, "source_location": "autonomous-operation-mode.md"},
+    {"source": "autonomous-operation-mode:BehavioralRules", "target": "autonomous-operation-mode:LearningCapture", "relation": "contains", "type": "semantic", "confidence": 0.95, "source_location": "autonomous-operation-mode.md"},
+    {"source": "autonomous-operation-mode:BehavioralRules", "target": "autonomous-operation-mode:ProactiveHealthcheck", "relation": "contains", "type": "semantic", "confidence": 0.95, "source_location": "autonomous-operation-mode.md"},
+    {"source": "autonomous-operation-mode:BehavioralRules", "target": "autonomous-operation-mode:PeriodicMaintenance", "relation": "contains", "type": "semantic", "confidence": 0.95, "source_location": "autonomous-operation-mode.md"},
+    {"source": "autonomous-operation-mode:ProactiveOperation", "target": "autonomous-operation-mode:ProactiveHealthcheck", "relation": "uses", "type": "semantic", "confidence": 0.85, "source_location": "autonomous-operation-mode.md"},
+    {"source": "autonomous-operation-mode:SelfDirectedBehavior", "target": "autonomous-operation-mode:BrainContextCheck", "relation": "uses", "type": "semantic", "confidence": 0.85, "source_location": "autonomous-operation-mode.md"},
+    {"source": "autonomous-operation-mode:SignalDrivenLearning", "target": "autonomous-operation-mode:LearningCapture", "relation": "uses", "type": "semantic", "confidence": 0.85, "source_location": "autonomous-operation-mode.md"},
+    {"source": "autonomous-operation-mode:ContinuousWorking", "target": "autonomous-operation-mode:PeriodicMaintenance", "relation": "uses", "type": "semantic", "confidence": 0.85, "source_location": "autonomous-operation-mode.md"}
+  ]
+}

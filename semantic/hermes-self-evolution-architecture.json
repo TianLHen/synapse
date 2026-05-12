@@ -1,0 +1,38 @@
+{
+  "nodes": [
+    {"id": "hermes-architecture:GEPAPipeline", "label": "GEPA Pipeline", "type": "architecture", "source": "hermes-self-evolution-architecture.md", "group": "architecture", "extracted_by": "llm"},
+    {"id": "hermes-architecture:ConstraintValidationGates", "label": "Constraint Validation Gates", "type": "mechanism", "source": "hermes-self-evolution-architecture.md", "group": "mechanism", "extracted_by": "llm"},
+    {"id": "hermes-architecture:BeforeAfterEvaluation", "label": "Before/After Evaluation", "type": "mechanism", "source": "hermes-self-evolution-architecture.md", "group": "mechanism", "extracted_by": "llm"},
+    {"id": "hermes-architecture:MultiDimensionalScoring", "label": "Multi-Dimensional Scoring", "type": "mechanism", "source": "hermes-self-evolution-architecture.md", "group": "mechanism", "extracted_by": "llm"},
+    {"id": "hermes-architecture:LLMAsJudge", "label": "LLM-as-Judge", "type": "method", "source": "hermes-self-evolution-architecture.md", "group": "method", "extracted_by": "llm"},
+    {"id": "hermes-architecture:TwoStageFiltering", "label": "Two-Stage Filtering", "type": "mechanism", "source": "hermes-self-evolution-architecture.md", "group": "mechanism", "extracted_by": "llm"},
+    {"id": "hermes-architecture:SelfEvolutionEngine", "label": "Self-Evolution Engine", "type": "architecture", "source": "hermes-self-evolution-architecture.md", "group": "architecture", "extracted_by": "llm"},
+    {"id": "hermes-architecture:HeuristicSkillScoring", "label": "Heuristic Skill Scoring", "type": "mechanism", "source": "hermes-self-evolution-architecture.md", "group": "mechanism", "extracted_by": "llm"},
+    {"id": "hermes-architecture:BackupBeforeWrite", "label": "Backup Before Write", "type": "pattern", "source": "hermes-self-evolution-architecture.md", "group": "pattern", "extracted_by": "llm"},
+    {"id": "hermes-architecture:RevertOnInsufficientImprovement", "label": "Revert on Insufficient Improvement", "type": "mechanism", "source": "hermes-self-evolution-architecture.md", "group": "mechanism", "extracted_by": "llm"},
+    {"id": "hermes-architecture:EvolutionLog", "label": "Evolution Log (JSONL)", "type": "mechanism", "source": "hermes-self-evolution-architecture.md", "group": "mechanism", "extracted_by": "llm"},
+    {"id": "hermes-architecture:SkillExtractorV02", "label": "skill-extractor v0.2.0", "type": "mechanism", "source": "hermes-self-evolution-architecture.md", "group": "mechanism", "extracted_by": "llm"},
+    {"id": "hermes-architecture:ResearchCollectorV02", "label": "research-collector v0.2.0", "type": "mechanism", "source": "hermes-self-evolution-architecture.md", "group": "mechanism", "extracted_by": "llm"},
+    {"id": "hermes-architecture:AbsorbAndEvolveV01", "label": "absorb-and-evolve v0.1.0", "type": "mechanism", "source": "hermes-self-evolution-architecture.md", "group": "mechanism", "extracted_by": "llm"},
+    {"id": "hermes-architecture:TraceFailureAnalysis", "label": "Trace Failure Analysis", "type": "method", "source": "hermes-self-evolution-architecture.md", "group": "method", "extracted_by": "llm"}
+  ],
+  "edges": [
+    {"source": "hermes-architecture:GEPAPipeline", "target": "hermes-architecture:ConstraintValidationGates", "relation": "has_part", "type": "semantic", "confidence": 0.95, "source_location": "hermes-self-evolution-architecture.md"},
+    {"source": "hermes-architecture:GEPAPipeline", "target": "hermes-architecture:BeforeAfterEvaluation", "relation": "has_part", "type": "semantic", "confidence": 0.95, "source_location": "hermes-self-evolution-architecture.md"},
+    {"source": "hermes-architecture:GEPAPipeline", "target": "hermes-architecture:LLMAsJudge", "relation": "has_part", "type": "semantic", "confidence": 0.95, "source_location": "hermes-self-evolution-architecture.md"},
+    {"source": "hermes-architecture:GEPAPipeline", "target": "hermes-architecture:TwoStageFiltering", "relation": "has_part", "type": "semantic", "confidence": 0.95, "source_location": "hermes-self-evolution-architecture.md"},
+    {"source": "hermes-architecture:BeforeAfterEvaluation", "target": "hermes-architecture:MultiDimensionalScoring", "relation": "uses", "type": "semantic", "confidence": 0.95, "source_location": "hermes-self-evolution-architecture.md"},
+    {"source": "hermes-architecture:SelfEvolutionEngine", "target": "hermes-architecture:HeuristicSkillScoring", "relation": "uses", "type": "semantic", "confidence": 0.95, "source_location": "hermes-self-evolution-architecture.md"},
+    {"source": "hermes-architecture:SelfEvolutionEngine", "target": "hermes-architecture:BackupBeforeWrite", "relation": "uses", "type": "semantic", "confidence": 0.95, "source_location": "hermes-self-evolution-architecture.md"},
+    {"source": "hermes-architecture:SelfEvolutionEngine", "target": "hermes-architecture:RevertOnInsufficientImprovement", "relation": "uses", "type": "semantic", "confidence": 0.95, "source_location": "hermes-self-evolution-architecture.md"},
+    {"source": "hermes-architecture:SelfEvolutionEngine", "target": "hermes-architecture:EvolutionLog", "relation": "uses", "type": "semantic", "confidence": 0.95, "source_location": "hermes-self-evolution-architecture.md"},
+    {"source": "hermes-architecture:SkillExtractorV02", "target": "hermes-architecture:ConstraintValidationGates", "relation": "implements", "type": "semantic", "confidence": 0.95, "source_location": "hermes-self-evolution-architecture.md"},
+    {"source": "hermes-architecture:SkillExtractorV02", "target": "hermes-architecture:BeforeAfterEvaluation", "relation": "implements", "type": "semantic", "confidence": 0.95, "source_location": "hermes-self-evolution-architecture.md"},
+    {"source": "hermes-architecture:SkillExtractorV02", "target": "hermes-architecture:TraceFailureAnalysis", "relation": "implements", "type": "semantic", "confidence": 0.95, "source_location": "hermes-self-evolution-architecture.md"},
+    {"source": "hermes-architecture:ResearchCollectorV02", "target": "hermes-architecture:TwoStageFiltering", "relation": "implements", "type": "semantic", "confidence": 0.95, "source_location": "hermes-self-evolution-architecture.md"},
+    {"source": "hermes-architecture:AbsorbAndEvolveV01", "target": "hermes-architecture:GEPAPipeline", "relation": "references", "type": "semantic", "confidence": 0.85, "source_location": "hermes-self-evolution-architecture.md"},
+    {"source": "hermes-architecture:AbsorbAndEvolveV01", "target": "hermes-architecture:SelfEvolutionEngine", "relation": "references", "type": "semantic", "confidence": 0.85, "source_location": "hermes-self-evolution-architecture.md"},
+    {"source": "hermes-architecture:BackupBeforeWrite", "target": "hermes-architecture:RevertOnInsufficientImprovement", "relation": "enables", "type": "semantic", "confidence": 0.95, "source_location": "hermes-self-evolution-architecture.md"},
+    {"source": "hermes-architecture:TwoStageFiltering", "target": "hermes-architecture:HeuristicSkillScoring", "relation": "contrasts_with", "type": "semantic", "confidence": 0.85, "source_location": "hermes-self-evolution-architecture.md"}
+  ]
+}

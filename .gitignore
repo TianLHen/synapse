@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+
+# 环境
+.env
+venv/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+
+# ChromaDB
+chroma_db/
+chroma_db_test/
+
+# 向量缓存
+*.npz
+
+# 测试残留
+_nul_deprecated
+
+# Windows reserved names / junk
+nul
+*.tmp
+
+# 工作区（沙箱 scratch 目录）
+workspace/
+
+# Research notes / generated reports
+llm-api-providers-research.md
+GRAPH_REPORT.md
+
+# OS
+Thumbs.db
+.DS_Store
+
+# 测试
+.pytest_cache/
+.coverage
+htmlcov/
+
+# 图谱数据文件
+*.npz
+*.wal
+*.bak

@@ -1,0 +1,34 @@
+{
+  "nodes": [
+    {"id": "community-project-internalization:CommunityProjectInternalizationProtocol", "label": "Community Project Internalization Protocol", "type": "concept", "source": "community-project-internalization.md", "group": "concept", "extracted_by": "llm"},
+    {"id": "community-project-internalization:FourStepPipeline", "label": "4-Step Pipeline", "type": "method", "source": "community-project-internalization.md", "group": "method", "extracted_by": "llm"},
+    {"id": "community-project-internalization:QuickSkimStep", "label": "Quick Skim Step", "type": "mechanism", "source": "community-project-internalization.md", "group": "mechanism", "extracted_by": "llm"},
+    {"id": "community-project-internalization:SelfCompareStep", "label": "Self Compare Step", "type": "mechanism", "source": "community-project-internalization.md", "group": "mechanism", "extracted_by": "llm"},
+    {"id": "community-project-internalization:AbsorbStep", "label": "Absorb Step", "type": "mechanism", "source": "community-project-internalization.md", "group": "mechanism", "extracted_by": "llm"},
+    {"id": "community-project-internalization:VerifyStep", "label": "Verify Step", "type": "mechanism", "source": "community-project-internalization.md", "group": "mechanism", "extracted_by": "llm"},
+    {"id": "community-project-internalization:AbsorptionPriorityTiers", "label": "Absorption Priority Tiers", "type": "mechanism", "source": "community-project-internalization.md", "group": "mechanism", "extracted_by": "llm"},
+    {"id": "community-project-internalization:DirectInstallPriority", "label": "Direct Install Priority", "type": "pattern", "source": "community-project-internalization.md", "group": "pattern", "extracted_by": "llm"},
+    {"id": "community-project-internalization:ExtractMethodologyAsSkill", "label": "Extract Methodology as Skill", "type": "method", "source": "community-project-internalization.md", "group": "method", "extracted_by": "llm"},
+    {"id": "community-project-internalization:ArchiveKeyDesignIdeas", "label": "Archive Key Design Ideas", "type": "pattern", "source": "community-project-internalization.md", "group": "pattern", "extracted_by": "llm"},
+    {"id": "community-project-internalization:SkipNotRelevant", "label": "Skip Not Relevant", "type": "pattern", "source": "community-project-internalization.md", "group": "pattern", "extracted_by": "llm"},
+    {"id": "community-project-internalization:MindsetShift", "label": "Mindset Shift", "type": "concept", "source": "community-project-internalization.md", "group": "concept", "extracted_by": "llm"},
+    {"id": "community-project-internalization:HermesSelfEvolutionSkill", "label": "Hermes Self-Evolution Skill", "type": "concept", "source": "community-project-internalization.md", "group": "concept", "extracted_by": "llm"}
+  ],
+  "edges": [
+    {"source": "community-project-internalization:HermesSelfEvolutionSkill", "target": "community-project-internalization:CommunityProjectInternalizationProtocol", "relation": "source_of", "type": "semantic", "confidence": 0.95, "source_location": "community-project-internalization.md"},
+    {"source": "community-project-internalization:CommunityProjectInternalizationProtocol", "target": "community-project-internalization:FourStepPipeline", "relation": "contains", "type": "semantic", "confidence": 0.95, "source_location": "community-project-internalization.md"},
+    {"source": "community-project-internalization:CommunityProjectInternalizationProtocol", "target": "community-project-internalization:AbsorptionPriorityTiers", "relation": "contains", "type": "semantic", "confidence": 0.95, "source_location": "community-project-internalization.md"},
+    {"source": "community-project-internalization:CommunityProjectInternalizationProtocol", "target": "community-project-internalization:MindsetShift", "relation": "references", "type": "semantic", "confidence": 0.95, "source_location": "community-project-internalization.md"},
+    {"source": "community-project-internalization:FourStepPipeline", "target": "community-project-internalization:QuickSkimStep", "relation": "contains", "type": "semantic", "confidence": 0.95, "source_location": "community-project-internalization.md"},
+    {"source": "community-project-internalization:FourStepPipeline", "target": "community-project-internalization:SelfCompareStep", "relation": "contains", "type": "semantic", "confidence": 0.95, "source_location": "community-project-internalization.md"},
+    {"source": "community-project-internalization:FourStepPipeline", "target": "community-project-internalization:AbsorbStep", "relation": "contains", "type": "semantic", "confidence": 0.95, "source_location": "community-project-internalization.md"},
+    {"source": "community-project-internalization:FourStepPipeline", "target": "community-project-internalization:VerifyStep", "relation": "contains", "type": "semantic", "confidence": 0.95, "source_location": "community-project-internalization.md"},
+    {"source": "community-project-internalization:QuickSkimStep", "target": "community-project-internalization:SelfCompareStep", "relation": "precedes", "type": "semantic", "confidence": 0.95, "source_location": "community-project-internalization.md"},
+    {"source": "community-project-internalization:SelfCompareStep", "target": "community-project-internalization:AbsorbStep", "relation": "precedes", "type": "semantic", "confidence": 0.95, "source_location": "community-project-internalization.md"},
+    {"source": "community-project-internalization:AbsorbStep", "target": "community-project-internalization:VerifyStep", "relation": "precedes", "type": "semantic", "confidence": 0.95, "source_location": "community-project-internalization.md"},
+    {"source": "community-project-internalization:AbsorptionPriorityTiers", "target": "community-project-internalization:DirectInstallPriority", "relation": "contains", "type": "semantic", "confidence": 0.95, "source_location": "community-project-internalization.md"},
+    {"source": "community-project-internalization:AbsorptionPriorityTiers", "target": "community-project-internalization:ExtractMethodologyAsSkill", "relation": "contains", "type": "semantic", "confidence": 0.95, "source_location": "community-project-internalization.md"},
+    {"source": "community-project-internalization:AbsorptionPriorityTiers", "target": "community-project-internalization:ArchiveKeyDesignIdeas", "relation": "contains", "type": "semantic", "confidence": 0.95, "source_location": "community-project-internalization.md"},
+    {"source": "community-project-internalization:AbsorptionPriorityTiers", "target": "community-project-internalization:SkipNotRelevant", "relation": "contains", "type": "semantic", "confidence": 0.95, "source_location": "community-project-internalization.md"}
+  ]
+}
