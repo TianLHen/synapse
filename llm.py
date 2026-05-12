@@ -263,7 +263,7 @@ class AnthropicProvider(LLMProvider):
         except Exception:
             # 兼容 DeepSeek 等可能含代理对/非法字符的响应
             import json as _json
-            data = _json.loads(resp.text.encode("utf-8", errors="surrogateescape").decode("utf-8", errors="replace"))
+            data = _json.loads(resp.text.encode("utf-8", errors="replace").decode("utf-8", errors="ignore"))
         latency = (time.time() - t0) * 1000
         # 兼容 DeepSeek 等返回 thinking+text 混合 block 的端点
         content = ""
@@ -274,7 +274,7 @@ class AnthropicProvider(LLMProvider):
                     break
         # 清理非法字符（Windows GBK 兼容）
         if content:
-            content = content.encode("utf-8", errors="surrogateescape").decode("utf-8", errors="replace")
+            content = content.encode("utf-8", errors="replace").decode("utf-8")
         return LLMResponse(
             content=content,
             model=data.get("model", request.model),

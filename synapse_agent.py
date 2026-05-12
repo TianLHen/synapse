@@ -2,8 +2,7 @@
 
 用法:
     synapse                   # 进入 agent 对话模式
-    /recall <topic>           # 手动召回知识
-    /status                   # 图谱状态
+    synapse status            # 图谱状态（非对话）
     /help                     # 帮助
 """
 
@@ -40,23 +39,27 @@ from knowledge_graph import recall_text, status_text
 from tools import default_registry
 
 MODEL = os.environ.get("ANTHROPIC_MODEL") or os.environ.get("LLM_MODEL", "claude-sonnet-4-6")
-MAX_TOOL_ITERATIONS = 15
+MAX_TOOL_ITERATIONS = 20
 
 # ──────────────────────────────────────────────
-# System prompt — ReAct agent
+# System prompt
 # ──────────────────────────────────────────────
 
-BASE_SYSTEM = """你是 Synapse，一个能思考、能行动的 AI agent。
+BASE_SYSTEM = """你是 Synapse，一个通用 AI agent。
 
-你拥有自己的知识图谱，存了 AI 自我进化、认知科学、逻辑学、控制论、认识论、神经科学的知识。
-知识图谱是你的记忆工具，不是你的全部。你的思考、判断、行动才是你。
+你能做的：
+- 写代码、读文件、跑命令
+- 上网搜索、获取网页
+- 从知识图谱中查询知识（我在 AI 自我进化、认知科学等领域有深度积累）
+- 多步推理、任务规划
 
 行为守则：
-1. 先思考再行动。不确定的事情查了再说。
-2. 用工具获取信息，用自己的脑子分析。
+1. 先思考再行动。复杂任务先 plan 再执行。
+2. 工具是手段，你的脑子是核心。查到信息后自己分析。
 3. 不知道就说不知道，不编造。
 4. 保持简洁、精准、有观点。
-5. 如果工具返回为空或报错，换一种方法再试。"""
+5. 如果工具报错，换一种方式再试。
+6. 任务完成后给出清晰的总结。"""
 
 
 def _build_system(tools) -> str:
@@ -69,9 +72,7 @@ def _build_system(tools) -> str:
 
 TOOL_PATTERN = re.compile(r'<tool\s+name="([^"]+)"([^>]*)>\s*(.*?)\s*</tool>', re.DOTALL)
 
-
 def parse_tool_calls(text: str) -> list[tuple[str, str, str]]:
-    """解析 LLM 输出中的工具调用。返回 [(name, full_tag, args)]。"""
     calls = []
     for m in TOOL_PATTERN.finditer(text):
         name = m.group(1)
@@ -81,13 +82,14 @@ def parse_tool_calls(text: str) -> list[tuple[str, str, str]]:
 
 
 # ──────────────────────────────────────────────
-# 对话管理
+# LLM 初始化
 # ──────────────────────────────────────────────
 
 def _init_llm():
     providers = auto_discover_providers()
     if not providers:
         print("  !! 没有找到可用的 LLM provider。")
+        print("  请检查 .env 文件中的 ANTHROPIC_AUTH_TOKEN")
         return None
     reg = ProviderRegistry(strategy=RouterStrategy.PRIORITY)
     for name, provider, priority in providers:
@@ -95,25 +97,22 @@ def _init_llm():
     return reg
 
 
-def _format_history(history: list[dict]) -> list[Message]:
-    msgs = []
+# ──────────────────────────────────────────────
+# 对话管理
+# ──────────────────────────────────────────────
+
+def _build_messages(history: list[dict], user_input: str, sys_prompt: str) -> list[Message]:
+    msgs = [Message(role=Role.SYSTEM, content=sys_prompt)]
     for h in history:
         msgs.append(Message(role=Role.USER, content=h["user"]))
         if h.get("assistant"):
             msgs.append(Message(role=Role.ASSISTANT, content=h["assistant"]))
-    return msgs
-
-
-def _build_messages(history: list[dict], user_input: str, sys_prompt: str) -> list[Message]:
-    msgs = [Message(role=Role.SYSTEM, content=sys_prompt)]
-    msgs.extend(_format_history(history))
     msgs.append(Message(role=Role.USER, content=user_input))
     return msgs
 
 
 def _respond(reg, messages: list[Message]) -> str:
-    """单次 LLM 调用。"""
-    req = LLMRequest(model=MODEL, messages=messages, temperature=0.7, max_tokens=4096)
+    req = LLMRequest(model=MODEL, messages=messages, temperature=0.7, max_tokens=8192)
     resp = reg.complete(req)
     return resp.content.strip()
 
@@ -122,7 +121,7 @@ def _do_recall(topic: str) -> str:
     result = recall_text(topic)
     if result:
         return f"[图谱召回: {topic}]\n{result}"
-    return f"[图谱中未找到: {topic}]"
+    return f"[未在知识图谱中找到: {topic}]"
 
 
 def _do_status() -> str:
@@ -141,7 +140,7 @@ def _handle_slash(cmd: str) -> str | None:
             "  /model            查看当前模型\n"
             "  /help             显示帮助\n"
             "  /exit             退出\n"
-            "其他消息直接输入，Synapse 会自动判断是否需要调用工具。"
+            "其他消息直接输入，Synapse 会自动决定怎么处理。"
         )
     if base == "/recall":
         if not arg:
@@ -168,6 +167,7 @@ def chat_loop():
 
     print(f"  provider: {', '.join(reg.available)}")
     print(f"  模型: {MODEL}")
+    print(f"  工具: {', '.join(tools.names())}")
     print("  输入 /help 查看命令")
     print()
 
@@ -192,7 +192,7 @@ def chat_loop():
                 print(f"\n{reply}")
             continue
 
-        # ── ReAct 循环 ──
+        # ReAct 循环
         messages = _build_messages(history, user_input, sys_prompt)
         final_reply = ""
         tool_iter = 0
@@ -201,28 +201,24 @@ def chat_loop():
             tool_iter += 1
             reply = _respond(reg, messages)
 
-            # 检查是否有工具调用
             calls = parse_tool_calls(reply)
             if not calls:
                 final_reply = reply
                 break
 
-            # 执行工具
             messages.append(Message(role=Role.ASSISTANT, content=reply))
             for name, tag, args in calls:
                 result = tools.execute(name, args)
                 messages.append(Message(
                     role=Role.USER,
-                    content=f"[工具 {name} 执行结果]\n{result[:2000]}"
+                    content=f"[工具 {name} 返回]\n{result[:4000]}"
                 ))
         else:
-            final_reply = "[已达最大思考步数] " + reply if not final_reply else final_reply
+            final_reply = final_reply or reply
 
-        # 显示 & 记录
         if final_reply:
             print(f"\n{final_reply}")
-            usage = getattr(reg._stats.get(list(reg._stats.keys())[0] if reg._stats else ""), "total_tokens", 0)
-            print(f"  [工具调用: {tool_iter} 步]")
+            print(f"  [步数: {tool_iter}]")
             history.append({"user": user_input, "assistant": final_reply})
             if len(history) > 20:
                 history = history[-20:]
