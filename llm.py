@@ -226,8 +226,8 @@ class AnthropicProvider(LLMProvider):
     models = ["claude-sonnet-4-6", "claude-opus-4-7", "claude-haiku-4-5"]
 
     def __init__(self, api_key: str | None = None, base_url: str | None = None):
-        self.api_key = api_key or os.environ.get("ANTHROPIC_API_KEY", "")
-        self.base_url = (base_url or "https://api.anthropic.com/v1").rstrip('/')
+        self.api_key = api_key or os.environ.get("ANTHROPIC_API_KEY") or os.environ.get("ANTHROPIC_AUTH_TOKEN", "")
+        self.base_url = (base_url or os.environ.get("ANTHROPIC_BASE_URL") or "https://api.anthropic.com/v1").rstrip('/')
         if not self.api_key:
             raise ValueError("ANTHROPIC_API_KEY 未设置")
 
@@ -258,10 +258,25 @@ class AnthropicProvider(LLMProvider):
         body["stream"] = False
         resp = httpx.post(f"{self.base_url}/messages", headers=self._headers(), json=body, timeout=120)
         resp.raise_for_status()
-        data = resp.json()
+        try:
+            data = resp.json()
+        except Exception:
+            # 兼容 DeepSeek 等可能含代理对/非法字符的响应
+            import json as _json
+            data = _json.loads(resp.text.encode("utf-8", errors="surrogateescape").decode("utf-8", errors="replace"))
         latency = (time.time() - t0) * 1000
+        # 兼容 DeepSeek 等返回 thinking+text 混合 block 的端点
+        content = ""
+        if data.get("content"):
+            for block in data["content"]:
+                if block.get("type") == "text":
+                    content = block.get("text", "")
+                    break
+        # 清理非法字符（Windows GBK 兼容）
+        if content:
+            content = content.encode("utf-8", errors="surrogateescape").decode("utf-8", errors="replace")
         return LLMResponse(
-            content=data["content"][0]["text"] if data.get("content") else "",
+            content=content,
             model=data.get("model", request.model),
             provider=self.name,
             usage={"input_tokens": data.get("usage", {}).get("input_tokens"),
@@ -536,8 +551,8 @@ def auto_discover_providers() -> list[tuple[str, LLMProvider, int]]:
     """自动发现所有有 API key 的 provider。返回 [(name, provider, priority)]。"""
     discovered = []
 
-    # Anthropic
-    if os.environ.get("ANTHROPIC_API_KEY"):
+    # Anthropic（也支持 ANTHROPIC_AUTH_TOKEN + ANTHROPIC_BASE_URL 自定义端点）
+    if os.environ.get("ANTHROPIC_API_KEY") or os.environ.get("ANTHROPIC_AUTH_TOKEN"):
         try:
             discovered.append(("anthropic", AnthropicProvider(), 100))
         except Exception:

@@ -29,6 +29,7 @@ setup(
         "evolution",
         "const",
         "synapse_cli",
+        "synapse_agent",
     ],
     packages=[
         "skills",

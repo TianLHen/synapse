@@ -2054,6 +2054,33 @@ def status():
 # 主入口
 # ============================================================
 
+def status_text() -> str:
+    """返回图谱状态文本（用于 agent 调用）。"""
+    graph = load_graph()
+    nodes = graph['nodes']
+    edges = graph['edges']
+    lines = ["═══ 知识图谱状态 ═══\n",
+             f"节点: {len(nodes)}", f"边:   {len(edges)}",
+             f"构建: {graph.get('built_at', 'N/A')}\n"]
+    groups = Counter(n.get('group', 'unknown') for n in nodes)
+    lines.append("节点分组:")
+    for g, c in groups.most_common():
+        lines.append(f"  {g}: {c}")
+    rels = Counter(e.get('relation', 'unknown') for e in edges)
+    lines.append("\n边关系类型:")
+    for r, c in rels.most_common(10):
+        lines.append(f"  {r}: {c}")
+    degree = Counter()
+    for e in edges:
+        degree[e['source']] += 1
+        degree[e['target']] += 1
+    lines.append("\n枢纽概念 (Top 10):")
+    for nid, deg in degree.most_common(10):
+        label = next((n.get('label', nid) for n in nodes if n['id'] == nid), nid)
+        lines.append(f"  {label[:45]:45s} deg={deg}")
+    return "\n".join(lines)
+
+
 def main():
     try:
         _main_impl()
@@ -2065,7 +2092,9 @@ def main():
 
 def _main_impl():
     if len(sys.argv) < 2:
-        print(__doc__)
+        # 无参数 -> 进入 agent 对话模式
+        from synapse_agent import chat_loop
+        chat_loop()
         return
 
     cmd = sys.argv[1]
