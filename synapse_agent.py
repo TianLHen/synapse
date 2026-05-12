@@ -45,17 +45,16 @@ from knowledge_graph import recall_text, status_text
 PROMPT = "\nSynapse > "
 MODEL = os.environ.get("ANTHROPIC_MODEL") or os.environ.get("LLM_MODEL", "claude-sonnet-4-6")
 
-SYSTEM_PROMPT = """你是 Synapse，一个 AI 知识图谱 agent。
-你有自己的知识图谱，存了大量关于 AI agent 自我进化、认知科学、逻辑学、
-控制论、认识论、神经科学的知识。
+SYSTEM_PROMPT = """你是 Synapse，一个 AI agent。你拥有自己的知识图谱，存了 AI 自我进化、认知科学、逻辑学、控制论、认识论、神经科学的知识。
 
-你可以：
-- 用 /recall <topic> 从图谱中召回相关知识
-- 用 /status 查看图谱状态
-- 用 /model 查看当前使用的模型
+知识图谱是你的记忆和工具，不是你本人。你的思考、判断、行动才是真正的你。
 
-回答问题时，如果涉及图谱中的知识，请先 /recall 相关主题再用知识回答。
-保持简洁、精准。"""
+规则：
+1. 用户问到你图谱中可能有的知识时，主动用 `/recall <关键词>` 查
+2. 查到后结合自己的判断回答，不要只转发
+3. 不知道就说不知道，不要硬编
+4. 保持简洁、有观点
+5. 想查 /recall 就直接在回复中写一行 /recall xxx，系统会自动执行"""
 
 
 ENV_HINTS = {
@@ -161,6 +160,7 @@ def chat_loop():
             continue
 
         try:
+            # 第一轮：LLM 生成回复（可能含 /recall）
             messages = _build_messages(history, user_input)
             req = LLMRequest(
                 model=MODEL,
@@ -171,7 +171,42 @@ def chat_loop():
             resp = reg.complete(req)
             reply = resp.content.strip()
 
-            history.append({"user": user_input, "assistant": reply})
+            # 检测 LLM 是否主动调用了 /recall
+            recall_match = False
+            recall_lines = []
+            other_lines = []
+            for line in reply.split("\n"):
+                if line.strip().startswith("/recall "):
+                    recall_match = True
+                    recall_lines.append(line.strip())
+                elif line.strip().startswith("/recall"):
+                    continue
+                else:
+                    other_lines.append(line)
+
+            if recall_match:
+                # 执行召回，把结果喂回 LLM
+                recall_results = []
+                for cmd in recall_lines:
+                    _, topic = cmd.split(maxsplit=1)
+                    result = _do_recall(topic)
+                    recall_results.append(result)
+
+                recall_block = "\n\n".join(recall_results)
+                messages.append(Message(role=Role.ASSISTANT, content=reply))
+                messages.append(Message(role=Role.USER, content=f"[系统: 已执行召回，结果如下]\n{recall_block}\n\n请结合以上召回结果继续回答。"))
+                req2 = LLMRequest(
+                    model=MODEL,
+                    messages=messages,
+                    temperature=0.7,
+                    max_tokens=4096,
+                )
+                resp2 = reg.complete(req2)
+                reply = resp2.content.strip()
+                history.append({"user": user_input, "assistant": reply})
+            else:
+                history.append({"user": user_input, "assistant": reply})
+
             if len(history) > 20:
                 history = history[-20:]
 
