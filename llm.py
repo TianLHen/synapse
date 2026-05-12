@@ -591,11 +591,14 @@ def auto_discover_providers() -> list[tuple[str, LLMProvider, int]]:
         except Exception:
             pass
 
-    # Ollama（无 key，本地）
+    # Ollama（无 key，本地 — 需同时通过 v1 接口检测）
     try:
         o = OllamaProvider()
         if o.models:
-            discovered.append(("ollama", o, 30))
+            import httpx as _httpx2
+            _v1_check = _httpx2.get(f"{o.base_url}/v1/models", timeout=3)
+            if _v1_check.status_code == 200:
+                discovered.append(("ollama", o, 30))
     except Exception:
         pass
 

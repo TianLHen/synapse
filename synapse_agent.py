@@ -20,7 +20,19 @@ if sys.platform == "win32" and hasattr(sys.stdout, "reconfigure"):
     except Exception:
         pass
 
+# 自动加载 .env 文件
 _here = Path(__file__).resolve().parent
+_env_file = _here / ".env"
+if _env_file.exists():
+    for line in _env_file.read_text(encoding="utf-8").splitlines():
+        line = line.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        key, _, val = line.partition("=")
+        key, val = key.strip(), val.strip().strip("\"'")
+        if key and val:
+            os.environ.setdefault(key, val)
+
 if str(_here) not in sys.path:
     sys.path.insert(0, str(_here))
 
@@ -30,7 +42,7 @@ from llm import (
 )
 from knowledge_graph import recall_text, status_text
 
-PROMPT = "\n> "
+PROMPT = "\nSynapse > "
 MODEL = os.environ.get("ANTHROPIC_MODEL") or os.environ.get("LLM_MODEL", "claude-sonnet-4-6")
 
 SYSTEM_PROMPT = """你是 Synapse，一个 AI 知识图谱 agent。
