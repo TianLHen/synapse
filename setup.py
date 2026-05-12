@@ -30,6 +30,7 @@ setup(
         "const",
         "synapse_cli",
         "synapse_agent",
+        "tools",
     ],
     packages=[
         "skills",
